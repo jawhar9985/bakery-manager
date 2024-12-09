@@ -1,0 +1,15 @@
+@media print {
+    /* Cacher tous les formulaires */
+    form {
+      display: none !important;
+    }
+
+    .navbar-brand {
+        display: none !important; }
+  
+    /* Cacher tous les boutons */
+    button {
+      display: none !important;
+    }
+  }
+  
