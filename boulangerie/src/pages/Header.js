@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ReactDOMServer from 'react-dom/server';
+import produitss from "../Produits.js"
 import './fiche.css';
 
 function Header() {
@@ -11,45 +11,18 @@ function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            
-            <li className="nav-item">
-              <Link className="nav-link btn btn-primary mx-1" to="/magasins/amin">AMIN</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link btn btn-primary mx-1" to="/magasins/mohamedlivreur">MOHAMED</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link btn btn-primary mx-1" to="/magasins/jalel">JALEL</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link btn btn-primary mx-1" to="/magasins/nakhla">NAKHLA</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link btn btn-primary mx-1" to="/magasins/tiss">TISS</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link btn btn-primary mx-1" to="/magasins/agareb">AGAREB</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link btn btn-primary mx-1" to="/magasins/saber">SABER</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link btn btn-primary mx-1" to="/magasins/manzelchaker">MANZEL CHAKER</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link btn btn-primary mx-1" to="/ouvriers">Dépenses</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link btn btn-primary mx-1" to="/depensessemaine">Dépenses Semaine</Link>
-            </li>
+        <ul className="navbar-nav">
+  {produitss.map(produit => {
+    return (
+      <li className="nav-item" key={produit.id}>
+        <Link className="nav-link btn btn-primary mx-1" to={`/magasins/${produit.magasin}`}>
+          {produit.magasin}
+        </Link>
+      </li>
+    );
+  })}
+</ul>
 
-
-            <li className="nav-item">
-              <Link className="nav-link btn btn-primary mx-1" to="/fiche">Fiche</Link>
-            </li>
-            
-          </ul>
         </div>
       </div>
     </nav>
